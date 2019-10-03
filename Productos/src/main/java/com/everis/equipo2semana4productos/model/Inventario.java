@@ -1,4 +1,4 @@
-package com.everis.equipo2semana4.inventario.model;
+package com.everis.equipo2semana4productos.model;
 // Generated 3/10/2019 12:09:30 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.Date;
