@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.everis.equipo2semana4.inventario</groupId>
-	<artifactId>equipo2semana4-inventario</artifactId>
+	<artifactId>equipo2semana4-invetnario</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>equipo2semana4-inventario</name>
 	<description>Demo project for Spring Boot</description>
