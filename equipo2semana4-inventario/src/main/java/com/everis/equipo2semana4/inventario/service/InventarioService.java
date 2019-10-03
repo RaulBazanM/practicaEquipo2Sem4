@@ -18,17 +18,21 @@ public class InventarioService {
 		return inventarioRepository.save(inventario);
 	}
 	
-	public int consultaStock(int id) {
-		int stock = 0;
-		List<Inventario> inventarios = inventarioRepository.findByproducto_idProducto();
-		for (Inventario inventario : inventarios) {
-			stock += inventario.getMovimiento();
-		}
-		return stock;
+	public List<Inventario> listarInventario(){
+		List<Inventario> inventarios = inventarioRepository.findAll();
+		return inventarios;
 	}
 	
+//	public int consultaStock(int id) {
+//	int stock = 0;
+//	List<Inventario> inventarios = inventarioRepository.findByproducto_idproducto();
+//	for (Inventario inventario : inventarios) {
+//		stock += inventario.getMovimiento();
+//	}
+//	return stock;
+//}
+	
 	public Inventario actualizar(Inventario inventario) {
-		return inventarioRepository.save(inventario);
-		
+		return inventarioRepository.save(inventario);	
 	}
 }

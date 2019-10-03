@@ -12,6 +12,6 @@ import com.everis.equipo2semana4.inventario.model.Inventario;
 @Repository
 public interface InventarioRepository extends JpaRepository<Inventario, Integer>{
 
-	public List<Inventario> findByproducto_idProducto();
+	//public List<Inventario> findByproducto_idProducto();
 	
 }
