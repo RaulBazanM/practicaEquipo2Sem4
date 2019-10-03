@@ -1,11 +1,14 @@
 package com.everis.equipo2semana4productos.model;
 // Generated 3/10/2019 12:09:30 PM by Hibernate Tools 5.2.12.Final
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -29,8 +32,6 @@ public class Producto implements java.io.Serializable {
 	private String url;
 	private Double precio;
 	private Double descuento;
-	@JsonIgnore
-	private Set<Inventario> inventarios = new HashSet<Inventario>(0);
 
 	public Producto() {
 	}
@@ -39,19 +40,9 @@ public class Producto implements java.io.Serializable {
 		this.idproducto = idproducto;
 	}
 
-	public Producto(int idproducto, String nombre, String descripcion, String url, Double precio, Double descuento,
-			Set<Inventario> inventarios) {
-		this.idproducto = idproducto;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.url = url;
-		this.precio = precio;
-		this.descuento = descuento;
-		this.inventarios = inventarios;
-	}
 
 	@Id
-
+	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "idproducto", unique = true, nullable = false)
 	public int getIdproducto() {
 		return this.idproducto;
@@ -106,13 +97,5 @@ public class Producto implements java.io.Serializable {
 		this.descuento = descuento;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "producto")
-	public Set<Inventario> getInventarios() {
-		return this.inventarios;
-	}
-
-	public void setInventarios(Set<Inventario> inventarios) {
-		this.inventarios = inventarios;
-	}
 
 }
