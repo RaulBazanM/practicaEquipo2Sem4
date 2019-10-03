@@ -15,7 +15,15 @@ public class InventarioService {
 	private InventarioRepository inventarioRepository;
 	
 	public Inventario insertar(Inventario inventario) {
-		return inventarioRepository.save(inventario);
+		int stock = consultaStock(inventario.getProducto().getIdproducto());
+		if(inventario.getMovimiento()<0) {
+			if(inventario.getMovimiento() > stock) {
+				return inventarioRepository.save(inventario);
+			}else{
+				return null;
+			}
+		}
+		return inventarioRepository.save(inventario);		
 	}
 	
 	public List<Inventario> listarInventario(){
@@ -23,14 +31,14 @@ public class InventarioService {
 		return inventarios;
 	}
 	
-//	public int consultaStock(int id) {
-//	int stock = 0;
-//	List<Inventario> inventarios = inventarioRepository.findByproducto_idproducto();
-//	for (Inventario inventario : inventarios) {
-//		stock += inventario.getMovimiento();
-//	}
-//	return stock;
-//}
+	public int consultaStock(int id) {
+	int stock = 0;
+	List<Inventario> inventarios = inventarioRepository.findByproducto_idproducto(id);
+	for (Inventario inventario : inventarios) {
+		stock += inventario.getMovimiento();
+	}
+	return stock;
+}
 	
 	public Inventario actualizar(Inventario inventario) {
 		return inventarioRepository.save(inventario);	
