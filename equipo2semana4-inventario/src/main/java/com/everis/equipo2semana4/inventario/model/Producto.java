@@ -24,7 +24,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class Producto implements java.io.Serializable {
 
 	/**
-	 * 
+	 * ssssss
 	 */
 	private static final long serialVersionUID = 1L;
 	private int idproducto;
