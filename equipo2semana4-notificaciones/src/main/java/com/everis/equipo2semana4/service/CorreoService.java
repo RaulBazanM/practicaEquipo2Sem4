@@ -19,8 +19,9 @@ public class CorreoService {
 	      return email.matches(regex);
 	   }
 	
-	public void enviarCorreoHTML(String email, String asunto, String html) {
+	public boolean enviarCorreoHTML(String email, String asunto, String html) {
 		// TODO Auto-generated method stub 
+		boolean exito = false;
 		   if(isValid(email)) {
 				String remitente = "academiaeveris";
 				
@@ -44,11 +45,14 @@ public class CorreoService {
 			        transport.connect("smtp.gmail.com", remitente, "tecguru$");
 			        transport.sendMessage(message, message.getAllRecipients());
 			        transport.close();
+			        return exito = true;
 			    }
 			    catch (MessagingException me) {
 			        me.printStackTrace();
+			        return exito = false;
 			    }
 			}
+		   return exito;
 		
 	}
 
