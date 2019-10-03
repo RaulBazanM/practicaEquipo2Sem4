@@ -30,10 +30,4 @@ public class ProductoController {
 	public List<Producto> listarProductos(){
 		return productoService.listarProductos();
 	}
-	
-	@GetMapping("")
-	public String prueba() {
-		return productoService.prueba();
-	}
-	
 }
