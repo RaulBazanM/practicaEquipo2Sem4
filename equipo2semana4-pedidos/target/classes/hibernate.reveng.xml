@@ -2,8 +2,6 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-  <table-filter match-catalog="examen3" match-name="cliente"/>
-  <table-filter match-catalog="examen3" match-name="pedido"/>
-  <table-filter match-catalog="examen3" match-name="pedido_has_producto"/>
-  <table-filter match-catalog="examen3" match-name="producto"/>
+  <table-filter match-catalog="semana4" match-name="inventario"/>
+  <table-filter match-catalog="semana4" match-name="producto"/>
 </hibernate-reverse-engineering>
