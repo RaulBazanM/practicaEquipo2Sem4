@@ -31,4 +31,9 @@ public class ProductoController {
 		return productoService.listarProductos();
 	}
 	
+	@GetMapping("")
+	public String prueba() {
+		return productoService.prueba();
+	}
+	
 }
