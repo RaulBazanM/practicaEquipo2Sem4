@@ -14,14 +14,21 @@ public class InventarioService {
 	@Autowired
 	private InventarioRepository inventarioRepository;
 	
-	public Inventario insertarPedido(Inventario inventario) {
+	public Inventario insertar(Inventario inventario) {
 		return inventarioRepository.save(inventario);
 	}
 	
-	public List<Inventario> listar(){
-		return inventarioRepository.findAll();
+	public int consultaStock(int id) {
+		int stock = 0;
+		List<Inventario> inventarios = inventarioRepository.findByproducto_idProducto();
+		for (Inventario inventario : inventarios) {
+			stock += inventario.getMovimiento();
+		}
+		return stock;
 	}
 	
-	
-	
+	public Inventario actualizar(Inventario inventario) {
+		return inventarioRepository.save(inventario);
+		
+	}
 }
