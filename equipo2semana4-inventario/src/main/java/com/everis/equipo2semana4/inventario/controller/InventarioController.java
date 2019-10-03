@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,11 @@ public class InventarioController {
 		return inventarioService.listarInventario();
 	}
 	
+	@GetMapping("stock/{id}")
+	public int stock(@PathVariable int id) {
+		return inventarioService.consultaStock(id);
+	}
+	
 	 @PostMapping("/")
 	 @ResponseBody
 	 public InventarioResponse nuevoInventario(@RequestBody Inventario inventario) {
@@ -35,9 +41,14 @@ public class InventarioController {
 		 inventario.setFecha(new Date());
 		 Inventario inventarioR = inventarioService.insertar(inventario);
 		 try {
-			 inventarioResponse.setInventario(inventarioR);
-			 inventarioResponse.setSuccessful(true);
-			 inventarioResponse.setMessage("funciona xD");			 
+			 if(inventarioR != null) {
+				 inventarioResponse.setInventario(inventarioR);
+				 inventarioResponse.setSuccessful(true);
+				 inventarioResponse.setMessage("Movimiento registrado");	
+			 }else {
+				 inventarioResponse.setSuccessful(false);
+			 }
+			 		 
 		 }catch(Exception e) {
 			 inventarioResponse.setSuccessful(false);
 			 inventarioResponse.setMessage(e.getMessage());
