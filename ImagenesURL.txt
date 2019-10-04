@@ -1,0 +1,14 @@
+Servicio Productos 
+https://cloud.docker.com/repository/docker/ivgos/productos   
+
+Servicio Eureka Server
+https://cloud.docker.com/repository/docker/ivgos/eureka-server   
+
+Servicio Config Server
+https://cloud.docker.com/repository/docker/ivgos/config-server
+
+Servicio Inventario
+https://cloud.docker.com/repository/docker/jazza0304/inventario
+
+Servicio Notificaciones
+https://cloud.docker.com/repository/docker/bazanr/notificaciones
