@@ -3,6 +3,7 @@ package com.everis.equipo2semana4.responses;
 public class NotificacionesResponse {
 	private boolean succesful;
 	private String mensaje;
+	private int port;
 	
 	public boolean isSuccesful() {
 		return succesful;
@@ -15,6 +16,12 @@ public class NotificacionesResponse {
 	}
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
+	}
+	public int getPort() {
+		return port;
+	}
+	public void setPort(int port) {
+		this.port = port;
 	}
 	
 	
